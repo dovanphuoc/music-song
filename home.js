@@ -45,6 +45,29 @@ const listSongs = [
     },
 ]
 
+const listSingers = [
+    {
+        nameSinger: 'Hòa Minzy',
+        subcribers: '241K quan tâm',
+        thumb: './images/mixartist.jpg',
+    },
+    {
+        nameSinger: 'Mr. Siro',
+        subcribers: '792K quan tâm',
+        thumb: './images/img3.webp',
+    },
+    {
+        nameSinger: 'XHTĐRLX',
+        subcribers: '28K quan tâm',
+        thumb: './images/img2.webp',
+    },
+    {
+        nameSinger: 'Forest Studio',
+        subcribers: '333 quan tâm',
+        thumb: './images/img1.webp',
+    },
+]
+
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 const songWrap = $('.song-wrap')
@@ -71,6 +94,8 @@ const volumeUpIcon = $('.btn-volume .fa-volume-up')
 const volumeMuteIcon = $('.btn-volume .fa-volume-mute')
 const figureImage = $('.thumb>.image')
 const iconPlaying = $('#icon-playing')
+const songInfoWrap = $('.song-info-wrapper')
+const carouselList = $('.carousel-list')
 let currentIndex = 0
 const audio = document.createElement('audio')
 let isRandom = false
@@ -341,6 +366,12 @@ function playRandomSong() {
     loadCurrentSong(currentIndex)
 }
 
+function handleShare(el) {
+    el.classList.add('active')
+    el.querySelector('i').setAttribute('class', 'fa-solid addColor fa-shuffle')
+    el.querySelector('span').innerHTML = 'Góc nhạc'
+}
+
 window.addEventListener('load', () => {
     iconSpinner.style.display = 'block'
     playIcon.style.display = 'none'
@@ -348,7 +379,7 @@ window.addEventListener('load', () => {
         iconSpinner.style.display = 'none'
         playIcon.style.display = 'block'
     }, 1000)
-    const htmls = listSongs.map(songItem => {
+    const htmls = listSongs.map((songItem) => {
         return `
             <div class="song-item">
                 <div class="checkbox-wrap"></div>
@@ -386,5 +417,40 @@ window.addEventListener('load', () => {
             </div>
         `
     }).join('')
-    songWrap.innerHTML = htmls
+    songWrap.innerHTML = htmls;
+
+    let htmlList = listSingers.map((item,index) => {
+        return `
+            <div class="carousel-item">
+                <div class="thumbnail">
+                    <div class="card-image">
+                        <div class="thumb">
+                            <figure class="image1">
+                                <img height="220" src=${item.thumb} alt="anh ca si">
+                                <div class="icon-position">
+                                    <button class="btn btn-circle-lay">
+                                        <i class="fa-solid fa-repeat icon-white"></i>
+                                    </button>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="artists">
+                        <div class="name-singer">
+                            <span>${item.nameSinger}</span>
+                            <i class="fa-solid fa-star icon-star icon-grey"></i>
+                        </div>
+                        <span class="like">${item.subcribers}</span>
+                        <button class="btn-play btn-share" onclick="handleShare(this)">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <span>Quan tâm</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `
+    }).join('')
+    carouselList.innerHTML = htmlList
 })

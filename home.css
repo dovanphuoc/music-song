@@ -444,9 +444,9 @@ img, span {
     transition: .2s;
 }
 
-.thumbnail .card-image .thumb .image:hover {
+/* .thumbnail .card-image .thumb .image:hover {
     transform: scale(1.08);
-}
+} */
 
 .thumbnail .card-image .thumb .image1:hover {
     transform: scale(1) !important;
@@ -459,7 +459,7 @@ img, span {
     border-radius: 50%;
     object-fit: cover;
     /* transition: border-radius 2s ease-out; */
-    animation: rotate 5s infinite;
+    /* animation: rotate 5s infinite; */
 }
 
 @keyframes rotate{
@@ -963,7 +963,9 @@ img, span {
 .carousel-item .card-content .btn-play {
     background: hsla(0,0%,100%,0.1);
     border: 1px solid hsla(0,0%,100%,0.1);
-    padding: 6px 26px;
+    /* padding: 6px 26px; */
+    width: 138px;
+    height: 32px;
     font-size: 1.2rem;
     margin-top: 12px;
 }
@@ -999,18 +1001,18 @@ img, span {
     display: none;
 }
 
-.icon-spinner {
+/* .icon-spinner {
     animation: spin-anim 1.5s linear;
-}
+} */
 
-@keyframes spin-anim {
+/* @keyframes spin-anim {
     0% {
         transform: rotate(0deg);
     }
     100% {
         transform: rotate(360deg);
     }
-}
+} */
 
 #btn-play-song .fa-pause {
     display: none;
@@ -1027,3 +1029,26 @@ img, span {
 }
 /* CHANNEL-SECTION */
 /* END CHANNEL-SECTION */
+
+
+/* SINGER */
+.btn-share {
+    transition: .3s ease all;
+}
+
+.btn-share:hover {
+    filter: brightness(.7);
+}
+
+.active:hover i {
+    color: #6e8ffb;
+}
+
+.carousel-wrap .carousel-item .card-content .active:hover {
+    border: 1px solid #6e8ffb;
+}
+
+.active:hover span {
+    color: #6e8ffb;
+} 
+/* END SINGER */
