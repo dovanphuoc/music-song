@@ -127,6 +127,11 @@ volumeMuteIcon.addEventListener('click', toggle)
 figureImage.addEventListener('click', handlePlaySong)
 figureImage.addEventListener('mouseleave', handleLeaveSong)
 figureImage.addEventListener('mouseover', handleMoveSong)
+btnPlaySong.addEventListener('click', handleSong)
+
+function handleSong() {
+    playSong()
+}
 
 function handlePlaySong() {
     playSong()
