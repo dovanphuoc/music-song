@@ -419,21 +419,20 @@ img, span {
 }
 
 .card-image .thumb {
-    box-shadow: 0 5px 8px 0 rgb(0 0 0 / 20%);
     border-radius: 8px;
     overflow: hidden;
 }
 
-.card-image .thumb .image {
+.card-image .thumb .image, .card-image .thumb .image1 {
     overflow: hidden;
     cursor: pointer;
     transition: .5s ease;
 }
 
-.card-image .thumb .image:hover .overlay {
-    background: rgba(0,0,0,0.5);
+.card-image .thumb .image:hover .overlay, .card-image .thumb .image1:hover .overlay {
+    /* background: rgba(0,0,0,0.5); */
 }
-.card-image .thumb .image:hover .icon-position {
+.card-image .thumb .image:hover .icon-position, .card-image .thumb .image1:hover .icon-position {
     opacity: 1;
 }
 .icon-position {
@@ -445,16 +444,31 @@ img, span {
     transition: .2s;
 }
 
-.card-image .thumb .image:hover {
-    /* transform: scale(1.08); */
+.thumbnail .card-image .thumb .image:hover {
+    transform: scale(1.08);
+}
+
+.thumbnail .card-image .thumb .image1:hover {
+    transform: scale(1) !important;
 }
 
 .card-image .thumb .image img {
     transition: transform .7s;
     width: 300px;
     height: 300px;
-    border-radius: 5px;
+    border-radius: 50%;
     object-fit: cover;
+    /* transition: border-radius 2s ease-out; */
+    animation: rotate 5s infinite;
+}
+
+@keyframes rotate{
+    from {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .media {
@@ -999,6 +1013,13 @@ img, span {
 }
 
 #btn-play-song .fa-pause {
+    display: none;
+}
+
+#icon-playing {
+    background: url('./images/icon-playing.gif') no-repeat center;
+    background-size: 18px;
+    height: 18px;
     display: none;
 }
 .carousel-item .card-content .card-image .thumb .image:hover {

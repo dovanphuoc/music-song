@@ -69,10 +69,13 @@ const timeStart = $('.time.left')
 const inputRangeSong = $('.input-range-song')
 const volumeUpIcon = $('.btn-volume .fa-volume-up')
 const volumeMuteIcon = $('.btn-volume .fa-volume-mute')
+const figureImage = $('.thumb>.image')
+const iconPlaying = $('#icon-playing')
 let currentIndex = 0
 const audio = document.createElement('audio')
 let isRandom = false
 let isRepeat = false
+let isPlaying = false
 
 function loadCurrentSong(currentIndex) {
     thumb.src = listSongs[currentIndex].imagePath
@@ -96,6 +99,23 @@ btnRepeat.addEventListener('click', repeatSong)
 inputRangeSong.addEventListener('input', changeVolumeSong)
 volumeUpIcon.addEventListener('click', toggleIcon)
 volumeMuteIcon.addEventListener('click', toggle)
+figureImage.addEventListener('click', handlePlaySong)
+figureImage.addEventListener('mouseleave', handleLeaveSong)
+figureImage.addEventListener('mouseover', handleMoveSong)
+
+function handlePlaySong() {
+    playSong()
+}
+
+function handleLeaveSong() {
+    if (!isPlaying) {
+        $('.icon-position').style.opacity = '0'
+    }
+}
+
+function handleMoveSong() {
+    $('.icon-position').style.opacity = '1'
+}
 
 function toggleIcon() {
     volumeMuteIcon.style.display = 'block'
@@ -192,14 +212,21 @@ function displayTextWhenPlaySong() {
 function playSong() {
     if (audio.paused) {
         audio.play()
+        isPlaying = true
         pauseIcon.style.display = 'block'
         playIcon.style.display = 'none'
+        iconPlaying.style.display = 'block'
+        $('.btn-circle-play .fa-play').style.display = 'none'
+        $('.icon-position').style.opacity = '1'
         displayTextWhenPlaySong()
     }
     else {
         audio.pause()
+        isPlaying = false
         pauseIcon.style.display = 'none'
         playIcon.style.display = 'block'
+        iconPlaying.style.display = 'none'
+        $('.btn-circle-play .fa-play').style.display = 'block'
         displayTextWhenPauseSong()
     }
 }
@@ -208,6 +235,9 @@ function nextSong() {
     if (isRandom) {
         playRandomSong()
         timeEnd.innerHTML = listSongs[currentIndex].durationSong
+        iconPlaying.style.display = 'block'
+        $('.btn-circle-play .fa-play').style.display = 'none'
+        $('.icon-position').style.opacity = '1'
         playSong()
         setTimeout(() => {
             displayTextWhenPauseSong()
@@ -219,6 +249,9 @@ function nextSong() {
         if (currentIndex == listSongs.length - 1) {
             currentIndex = 0
             loadCurrentSong(currentIndex)
+            iconPlaying.style.display = 'block'
+            $('.btn-circle-play .fa-play').style.display = 'none'
+            $('.icon-position').style.opacity = '1'
             timeEnd.innerHTML = listSongs[currentIndex].durationSong
             showLoadingIcon()
             setTimeout(() => {
@@ -229,6 +262,9 @@ function nextSong() {
         }
         else {
             currentIndex++
+            iconPlaying.style.display = 'block'
+            $('.btn-circle-play .fa-play').style.display = 'none'
+            $('.icon-position').style.opacity = '1'
             audio.src = listSongs[currentIndex].src
             loadCurrentSong(currentIndex)
             timeEnd.innerHTML = listSongs[currentIndex].durationSong
@@ -246,6 +282,9 @@ function prevSong() {
     if (isRandom) {
         playRandomSong()
         timeEnd.innerHTML = listSongs[currentIndex].durationSong
+        iconPlaying.style.display = 'block'
+        $('.btn-circle-play .fa-play').style.display = 'none'
+        $('.icon-position').style.opacity = '1'
         playSong()
         setTimeout(() => {
             displayTextWhenPlaySong()
@@ -257,6 +296,9 @@ function prevSong() {
         if (currentIndex == 0) {
             currentIndex = listSongs.length - 1
             loadCurrentSong(currentIndex)
+            iconPlaying.style.display = 'block'
+            $('.btn-circle-play .fa-play').style.display = 'none'
+            $('.icon-position').style.opacity = '1'
             timeEnd.innerHTML = listSongs[currentIndex].durationSong
             showLoadingIcon()
             setTimeout(() => {
@@ -267,6 +309,9 @@ function prevSong() {
         }
         else {
             currentIndex--
+            iconPlaying.style.display = 'block'
+            $('.btn-circle-play .fa-play').style.display = 'none'
+            $('.icon-position').style.opacity = '1'
             pauseIcon.style.display = 'block'
             playIcon.style.display = 'none'
             audio.src = listSongs[currentIndex].src
