@@ -43,17 +43,6 @@ const listSongs = [
         text1: 'Cứ Yêu Đi (100 Ngày Bên Em OST) (Single)',
         durationSong: '04:45'
     },
-    {
-        nameSong: 'Khác Biệt To Lớn (Talkshow Chuyện Chúng Ta',
-        imagePath: './images/singer4.webp',
-        singer: 'Hòa Minzy',
-        icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
-        iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
-        src: './audio/Khac Biet To Lon Remix_ - Trinh Thang Bi.m4a',
-        text: 'Talkshow Chuyện Chúng Ta',
-        text1: 'Talkshow Chuyện Chúng Ta',
-        durationSong: '03:52'
-    },
 ]
 
 const $ = document.querySelector.bind(document)
@@ -163,21 +152,18 @@ function handleEndSong() {
         nextSong()
     }
 }
-
 function updateProgressSong() {
     const seek = Math.floor(audio.currentTime / audio.duration * 100)
     inputRange.value = seek 
-    timeStart.innerHTML = formatTime(seek)
+    timeStart.innerHTML = formatTime(audio.currentTime)
     if (inputRange.value !== 0) {
         inputRange.style.background = `linear-gradient(to right, #fff 0%, #fff ${seek}%, hsla(0,0%,100%,0.3) ${seek}%, hsla(0,0%,100%,0.3) 100%)`
     }
 }
 
-function changeProgressSong(e) {
-    const seekTime = Math.floor(audio.duration / 100 * e.target.value)
+function changeProgressSong() {
+    const seekTime = Math.floor(audio.duration / 100 * inputRange.value)
     audio.currentTime = seekTime
-    const format = formatTime(seekTime)
-    timeStart.innerHTML = format
     inputRange.style.background = `linear-gradient(to right, #fff 0%, #fff ${seekTime}%, hsla(0,0%,100%,0.3) ${seekTime}%, hsla(0,0%,100%,0.3) 100%)`
 }
 
