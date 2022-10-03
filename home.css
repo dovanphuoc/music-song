@@ -394,7 +394,7 @@ img, span {
 
 .main-page {
     position: absolute;
-    top: 70px;
+    top: 75px;
     padding: 0 59px;
     width: 100%;
     background: #2a213a;
@@ -453,13 +453,10 @@ img, span {
 }
 
 .card-image .thumb .image img {
-    transition: transform .7s;
     width: 300px;
     height: 300px;
-    border-radius: 50%;
+    border-radius: 5px;
     object-fit: cover;
-    /* transition: border-radius 2s ease-out; */
-    /* animation: rotate 5s infinite; */
 }
 
 @keyframes rotate{
@@ -963,7 +960,6 @@ img, span {
 .carousel-item .card-content .btn-play {
     background: hsla(0,0%,100%,0.1);
     border: 1px solid hsla(0,0%,100%,0.1);
-    /* padding: 6px 26px; */
     width: 138px;
     height: 32px;
     font-size: 1.2rem;
@@ -1051,4 +1047,8 @@ img, span {
 .active:hover span {
     color: #6e8ffb;
 } 
+
+.addColor {
+    color: #3460f5;
+}
 /* END SINGER */

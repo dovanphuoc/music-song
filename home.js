@@ -96,6 +96,8 @@ const figureImage = $('.thumb>.image')
 const iconPlaying = $('#icon-playing')
 const songInfoWrap = $('.song-info-wrapper')
 const carouselList = $('.carousel-list')
+const btnHeart = $('.btn-heart')
+const singerThumb = $('#singer-thumb')
 let currentIndex = 0
 const audio = document.createElement('audio')
 let isRandom = false
@@ -128,6 +130,11 @@ figureImage.addEventListener('click', handlePlaySong)
 figureImage.addEventListener('mouseleave', handleLeaveSong)
 figureImage.addEventListener('mouseover', handleMoveSong)
 btnPlaySong.addEventListener('click', handleSong)
+btnHeart.addEventListener('click', addColor)
+
+function addColor() {
+    btnHeart.querySelector('.fa-heart').classList.toggle('addColor')
+}
 
 function handleSong() {
     playSong()
@@ -248,7 +255,11 @@ function playSong() {
         iconPlaying.style.display = 'block'
         $('.btn-circle-play .fa-play').style.display = 'none'
         $('.icon-position').style.opacity = '1'
+        singerThumb.style.animation = 'rotate 4s linear infinite'
+        singerThumb.style.borderRadius = '50%'
+        singerThumb.style.transition = 'border-radius .3s ease-out'
         displayTextWhenPlaySong()
+
     }
     else {
         audio.pause()
@@ -257,6 +268,9 @@ function playSong() {
         playIcon.style.display = 'block'
         iconPlaying.style.display = 'none'
         $('.btn-circle-play .fa-play').style.display = 'block'
+        singerThumb.style.animation = 'unset'
+        singerThumb.style.borderRadius = '5px'
+        singerThumb.style.transition = 'border-radius .3s ease-in'
         displayTextWhenPauseSong()
     }
 }
