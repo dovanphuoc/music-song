@@ -997,18 +997,18 @@ img, span {
     display: none;
 }
 
-/* .icon-spinner {
+.icon-spinner {
     animation: spin-anim 1.5s linear;
-} */
+}
 
-/* @keyframes spin-anim {
+@keyframes spin-anim {
     0% {
         transform: rotate(0deg);
     }
     100% {
         transform: rotate(360deg);
     }
-} */
+}
 
 #btn-play-song .fa-pause {
     display: none;
@@ -1050,5 +1050,26 @@ img, span {
 
 .addColor {
     color: #3460f5;
+}
+
+.action-container .zm-action button .fa-play.hide {
+    display: none;
+}
+
+.bg-white {
+    background-image: url('https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/icons/icon-playing.gif');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+}
+
+.action-container .zm-action button {
+    pointer-events: none;
+}
+
+.hide-right.media-item.active {
+    background: hsla(0,0%,100%,0.15);
 }
 /* END SINGER */

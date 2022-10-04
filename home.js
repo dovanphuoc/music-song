@@ -5,6 +5,7 @@ const listSongs = [
         singer: 'Hòa Minzy',
         icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
         iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
+        iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
         src: './audio/Roi Bo - Hoa Minzy.mp3',
         text: 'Rời Bỏ (Single)',
         text1: 'Rời Bỏ (Single)',
@@ -16,6 +17,7 @@ const listSongs = [
         singer: 'Mr.Siro',
         icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
         iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
+        iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
         src: './audio/Khong The Cung Nhau Suot Kiep - Hoa Minz.mp3',
         text: 'Không Thể Cùng Nhau Suốt Kiếp (Single)',
         text1: 'Không Thể Cùng Nhau Suốt Kiếp (Single)',
@@ -27,6 +29,7 @@ const listSongs = [
         singer: 'Đức Phúc',
         icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
         iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
+        iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
         src: './audio/Dem Lao Xao - Hoa Minzy_ XHTDRLX.mp3',
         text: 'Xuân Hạ Thu Đông, rồi lại Xuân - Tập 3+4',
         text1: 'Xuân Hạ Thu Đông, rồi lại Xuân - Tập 3+4',
@@ -38,6 +41,7 @@ const listSongs = [
         singer: 'Trịnh Thăng Bình',
         icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
         iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
+        iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
         src: './audio/Cu Yeu Di - Duc Phuc_ Hoa Minzy.mp3',
         text: 'Cứ Yêu Đi (100 Ngày Bên Em OST) (Single)',
         text1: 'Cứ Yêu Đi (100 Ngày Bên Em OST) (Single)',
@@ -246,32 +250,49 @@ function displayTextWhenPlaySong() {
     btnPlaySong.querySelector('.fa-pause').style.display = 'block'
 }
 
+function handleSongWhenImagePlay() {
+    audio.play()
+    isPlaying = true
+    pauseIcon.style.display = 'block'
+    playIcon.style.display = 'none'
+    iconPlaying.style.display = 'block'
+    $('.btn-circle-play .fa-play').style.display = 'none'
+    $('.icon-position').style.opacity = '1'
+    singerThumb.style.animation = 'rotate 4s linear infinite'
+    singerThumb.style.borderRadius = '50%'
+    singerThumb.style.transition = 'border-radius .3s ease-out'
+    displayTextWhenPlaySong()
+}
+
+function stopAll (){
+    let pick = document.querySelector('.bg-white')
+    if(!pick) return;
+    pick.previousSibling.previousElementSibling.classList.remove('hide')
+    pick.classList.remove('bg-white')
+    let focus = $('.hide-right.media-item.active')
+    if (!focus) return
+    focus.classList.remove('active')
+}
+
+function handleSongWhenImagePause() {
+    audio.pause()
+    isPlaying = false
+    pauseIcon.style.display = 'none'
+    playIcon.style.display = 'block'
+    iconPlaying.style.display = 'none'
+    $('.btn-circle-play .fa-play').style.display = 'block'
+    singerThumb.style.animation = 'unset'
+    singerThumb.style.borderRadius = '5px'
+    singerThumb.style.transition = 'border-radius .3s ease-in'
+    displayTextWhenPauseSong()
+}
+
 function playSong() {
     if (audio.paused) {
-        audio.play()
-        isPlaying = true
-        pauseIcon.style.display = 'block'
-        playIcon.style.display = 'none'
-        iconPlaying.style.display = 'block'
-        $('.btn-circle-play .fa-play').style.display = 'none'
-        $('.icon-position').style.opacity = '1'
-        singerThumb.style.animation = 'rotate 4s linear infinite'
-        singerThumb.style.borderRadius = '50%'
-        singerThumb.style.transition = 'border-radius .3s ease-out'
-        displayTextWhenPlaySong()
-
+        handleSongWhenImagePlay()   
     }
     else {
-        audio.pause()
-        isPlaying = false
-        pauseIcon.style.display = 'none'
-        playIcon.style.display = 'block'
-        iconPlaying.style.display = 'none'
-        $('.btn-circle-play .fa-play').style.display = 'block'
-        singerThumb.style.animation = 'unset'
-        singerThumb.style.borderRadius = '5px'
-        singerThumb.style.transition = 'border-radius .3s ease-in'
-        displayTextWhenPauseSong()
+        handleSongWhenImagePause()
     }
 }
 
@@ -387,18 +408,32 @@ function playRandomSong() {
 
 function handleShare(el) {
     el.classList.add('active')
-    el.querySelector('i').setAttribute('class', 'fa-solid addColor fa-shuffle')
+    el.querySelector('i').setAttribute('class', 'fa-solid fa-shuffle')
     el.querySelector('span').innerHTML = 'Góc nhạc'
 }
-
+function handleClickImage(index, el) {
+    stopAll()
+    audio.src = listSongs[index].src
+    el.parentElement.parentElement.parentElement.classList.add('active')
+    let node = el.nextElementSibling.nextElementSibling.lastElementChild.lastElementChild
+    node.querySelector('.fa-play').classList.toggle('hide')
+    node.querySelector('div').classList.toggle('bg-white')
+    loadCurrentSong(index)
+    if (node.querySelector('div').classList.contains('bg-white')) {
+        handleSongWhenImagePlay()
+    }
+    else {
+        handleSongWhenImagePause()
+    }
+}
 window.addEventListener('load', () => {
     iconSpinner.style.display = 'block'
     playIcon.style.display = 'none'
     setTimeout(() => {
         iconSpinner.style.display = 'none'
         playIcon.style.display = 'block'
-    }, 1000)
-    const htmls = listSongs.map((songItem) => {
+    }, 1000);
+    const htmls = listSongs.map((songItem, index) => {
         return `
             <div class="song-item">
                 <div class="checkbox-wrap"></div>
@@ -408,12 +443,15 @@ window.addEventListener('load', () => {
                             ${songItem.iconMusic}
                         </div>
                         <div class="song-thumb">
-                            <div class="overlay"></div>
-                            <img class="singer-img" src=${songItem.imagePath} alt="singer">
+                            <div onclick="handleClickImage(${index}, this)" class="overlay"></div>
+                            <figure>
+                                <img class="singer-img" src=${songItem.imagePath} alt="singer">
+                            </figure>
                             <div class="action-container">
                                 <div class="zm-action">
                                     <button>
-                                        <i class="fa-solid fa-play icon-play"></i>
+                                        ${songItem.iconPlay}
+                                        <div></div>
                                     </button>
                                 </div>
                             </div>
@@ -438,7 +476,7 @@ window.addEventListener('load', () => {
     }).join('')
     songWrap.innerHTML = htmls;
 
-    let htmlList = listSingers.map((item,index) => {
+    let htmlList = listSingers.map((item) => {
         return `
             <div class="carousel-item">
                 <div class="thumbnail">
