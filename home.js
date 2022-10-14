@@ -3,9 +3,10 @@ const listSongs = [
         nameSong: 'Rời bỏ',
         imagePath: './images/singer.webp',
         singer: 'Hòa Minzy',
-        icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
+        icon: '<i class="activeIcon fa-regular fa-star icon-star icon-grey"></i>',
         iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
         iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
+        hidePlayIcon: '<i class="fa-solid fa-play icon-play hide"></i>',
         src: './audio/Roi Bo - Hoa Minzy.mp3',
         text: 'Rời Bỏ (Single)',
         text1: 'Rời Bỏ (Single)',
@@ -18,6 +19,7 @@ const listSongs = [
         icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
         iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
         iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
+        hidePlayIcon: '<i class="fa-solid fa-play icon-play hide"></i>',
         src: './audio/Khong The Cung Nhau Suot Kiep - Hoa Minz.mp3',
         text: 'Không Thể Cùng Nhau Suốt Kiếp (Single)',
         text1: 'Không Thể Cùng Nhau Suốt Kiếp (Single)',
@@ -30,6 +32,7 @@ const listSongs = [
         icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
         iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
         iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
+        hidePlayIcon: '<i class="fa-solid fa-play icon-play hide"></i>',
         src: './audio/Dem Lao Xao - Hoa Minzy_ XHTDRLX.mp3',
         text: 'Xuân Hạ Thu Đông, rồi lại Xuân - Tập 3+4',
         text1: 'Xuân Hạ Thu Đông, rồi lại Xuân - Tập 3+4',
@@ -42,10 +45,102 @@ const listSongs = [
         icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
         iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
         iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
+        hidePlayIcon: '<i class="fa-solid fa-play icon-play hide"></i>',
         src: './audio/Cu Yeu Di - Duc Phuc_ Hoa Minzy.mp3',
         text: 'Cứ Yêu Đi (100 Ngày Bên Em OST) (Single)',
         text1: 'Cứ Yêu Đi (100 Ngày Bên Em OST) (Single)',
         durationSong: '04:45'
+    },
+    {
+        nameSong: 'Bi Hài',
+        imagePath: './images/img8.webp',
+        singer: 'Hòa Minzy',
+        icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
+        iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
+        iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
+        hidePlayIcon: '<i class="fa-solid fa-play icon-play hide"></i>',
+        src: './audio/Bi Hai - Hoa Minzy.mp3',
+        text: 'Bi Hài (Single)',
+        text1: 'Bi Hài (Single)',
+        durationSong: '05:17'
+    },
+    {
+        nameSong: 'Chấp Nhận',
+        imagePath: './images/img9.webp',
+        singer: 'Hòa Minzy',
+        icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
+        iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
+        iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
+        hidePlayIcon: '<i class="fa-solid fa-play icon-play hide"></i>',
+        src: './audio/Chap Nhan - Hoa Minzy.mp3',
+        text: 'Chấp Nhận (Single)',
+        text1: 'Chấp Nhận (Single)',
+        durationSong: '04:07'
+    },
+    {
+        nameSong: 'Chỉ Là Tình Cờ',
+        imagePath: './images/img13.webp',
+        singer: 'Hòa Minzy',
+        icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
+        iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
+        iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
+        hidePlayIcon: '<i class="fa-solid fa-play icon-play hide"></i>',
+        src: './audio/Chi La Tinh Co.mp3',
+        text: 'Chỉ Là Tình Cờ (Single)',
+        text1: 'Chỉ Là Tình Cờ (Single)',
+        durationSong: '04:39'
+    },
+    {
+        nameSong: 'Giá Như',
+        imagePath: './images/img11.webp',
+        singer: 'Hòa Minzy',
+        icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
+        iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
+        iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
+        hidePlayIcon: '<i class="fa-solid fa-play icon-play hide"></i>',
+        src: './audio/Gia Nhu - Hoa Minzy_ Nguyen Minh Cuong.mp3',
+        text: 'Giá Như (Single)',
+        text1: 'Giá Như (Single)',
+        durationSong: '04:52'
+    },
+    {
+        nameSong: 'Nàng Tiên Cá',
+        imagePath: './images/img12.webp',
+        singer: 'Hòa Minzy',
+        icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
+        iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
+        iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
+        hidePlayIcon: '<i class="fa-solid fa-play icon-play hide"></i>',
+        src: './audio/Nang Tien Ca - Hoa Minzy.mp3',
+        text: 'Nàng Tiên Cá (Single)',
+        text1: 'Nàng Tiên Cá (Single)',
+        durationSong: '03:32'
+    },
+    {
+        nameSong: 'Tìm Một Nửa Cô Đơn',
+        imagePath: './images/img10.webp',
+        singer: 'Hòa Minzy',
+        icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
+        iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
+        iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
+        hidePlayIcon: '<i class="fa-solid fa-play icon-play hide"></i>',
+        src: './audio/Tim Mot Nua Co Don.mp3',
+        text: 'Tìm Một Nửa Cô Đơn (Single)',
+        text1: 'Tìm Một Nửa Cô Đơn (Single)',
+        durationSong: '05:20'
+    },
+    {
+        nameSong: 'Tự Nhiên Buồn',
+        imagePath: './images/img14.webp',
+        singer: 'Hòa Minzy',
+        icon: '<i class="fa-regular fa-star icon-star icon-grey"></i>',
+        iconMusic: '<i class="fa-solid fa-music icon-grey"></i>',
+        iconPlay: '<i class="fa-solid fa-play icon-play"></i>',
+        hidePlayIcon: '<i class="fa-solid fa-play icon-play hide"></i>',
+        src: './audio/Tu Nhien Buon - Hoa Minzy.mp3',
+        text: 'Tự Nhiên Buồn (Single)',
+        text1: 'Tự Nhiên Buồn (Single)',
+        durationSong: '04:27'
     },
 ]
 
@@ -72,6 +167,96 @@ const listSingers = [
     },
 ]
 
+function render() {
+    const htmls = listSongs.map((songItem, index) => {
+        return `
+            <div class="song-item ${currentIndex === index ? 'active' : ''}">
+                <div class="checkbox-wrap"></div>
+                <div class="media hide-right media-item">
+                    <div class="mdi-left mdi-wrap">
+                        <div class="song-pref">
+                            ${songItem.iconMusic}
+                        </div>
+                        <div class="song-thumb">
+                            <div onclick="handleClickImage(${index}, this)" class="activeSong ${currentIndex === index ? 'overlay-bg' : ''}"></div>
+                            <figure>
+                                <img class="singer-img" src=${songItem.imagePath} alt="singer">
+                            </figure>
+                            <div class="action-container">
+                                <div class="zm-action">
+                                    <button>
+                                        ${songItem.hidePlayIcon}
+                                        <div></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="name-song">${songItem.nameSong}</div>
+                            <div class="name-singer">
+                                <span>${songItem.singer}</span>
+                                <i class="fa-regular fa-star icon-star icon-grey"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdi-content">
+                        <p class="text-grey">${songItem.text}</p>
+                    </div>
+                    <div class="mdi-right">
+                        <span class="text-grey">${songItem.durationSong}</span>
+                    </div>
+                </div>
+            </div>
+        `
+    }).join('')
+    songWrap.innerHTML = htmls;
+}
+
+window.addEventListener('load', () => {
+    iconSpinner.style.display = 'block'
+    playIcon.style.display = 'none'
+    setTimeout(() => {
+        iconSpinner.style.display = 'none'
+        playIcon.style.display = 'block'
+    }, 1000);
+    
+    render()
+    let htmlList = listSingers.map((item) => {
+        return `
+            <div class="carousel-item">
+                <div class="thumbnail">
+                    <div class="card-image">
+                        <div class="thumb">
+                            <figure class="image1">
+                                <img height="220" src=${item.thumb} alt="anh ca si">
+                                <div class="icon-position">
+                                    <button class="btn btn-circle-lay">
+                                        <i class="fa-solid fa-repeat icon-white"></i>
+                                    </button>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="artists">
+                        <div class="name-singer">
+                            <span>${item.nameSinger}</span>
+                            <i class="fa-solid fa-star icon-star icon-grey"></i>
+                        </div>
+                        <span class="like">${item.subcribers}</span>
+                        <button class="btn-play btn-share" onclick="handleShare(this)">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <span>Quan tâm</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `
+    }).join('')
+    carouselList.innerHTML = htmlList    
+})
+
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 const songWrap = $('.song-wrap')
@@ -87,7 +272,7 @@ const btnNext = $('.btn.btn-next')
 const btnRepeat = $('.btn.btn-repeat')
 const playIcon = btnCirclePlay.querySelector('.icon-play')
 const pauseIcon = btnCirclePlay.querySelector('.icon-pause')
-const iconRandom = btnRandom.querySelector('.addColor')
+const iconRandom = btnRandom.querySelector('.btn-random .fa-shuffle')
 const iconSpinner = $('#btn-play .icon-spinner')
 const timeEnd = $('.time.right')
 const btnPlaySong = $('#btn-play-song')
@@ -102,7 +287,9 @@ const songInfoWrap = $('.song-info-wrapper')
 const carouselList = $('.carousel-list')
 const btnHeart = $('.btn-heart')
 const singerThumb = $('#singer-thumb')
-let currentIndex = 0
+let isClick = false
+let saveIndex
+let currentIndex = 0 
 const audio = document.createElement('audio')
 let isRandom = false
 let isRepeat = false
@@ -264,16 +451,6 @@ function handleSongWhenImagePlay() {
     displayTextWhenPlaySong()
 }
 
-function stopAll (){
-    let pick = document.querySelector('.bg-white')
-    if(!pick) return;
-    pick.previousSibling.previousElementSibling.classList.remove('hide')
-    pick.classList.remove('bg-white')
-    let focus = $('.hide-right.media-item.active')
-    if (!focus) return
-    focus.classList.remove('active')
-}
-
 function handleSongWhenImagePause() {
     audio.pause()
     isPlaying = false
@@ -296,53 +473,6 @@ function playSong() {
     }
 }
 
-function nextSong() {
-    if (isRandom) {
-        playRandomSong()
-        timeEnd.innerHTML = listSongs[currentIndex].durationSong
-        iconPlaying.style.display = 'block'
-        $('.btn-circle-play .fa-play').style.display = 'none'
-        $('.icon-position').style.opacity = '1'
-        playSong()
-        setTimeout(() => {
-            displayTextWhenPauseSong()
-        }, 800)
-        displayTextWhenPlaySong()
-        showLoadingIcon()
-    }
-    else {
-        if (currentIndex == listSongs.length - 1) {
-            currentIndex = 0
-            loadCurrentSong(currentIndex)
-            iconPlaying.style.display = 'block'
-            $('.btn-circle-play .fa-play').style.display = 'none'
-            $('.icon-position').style.opacity = '1'
-            timeEnd.innerHTML = listSongs[currentIndex].durationSong
-            showLoadingIcon()
-            setTimeout(() => {
-                displayTextWhenPlaySong()
-            }, 800)
-            displayTextWhenPauseSong()
-            audio.play()
-        }
-        else {
-            currentIndex++
-            iconPlaying.style.display = 'block'
-            $('.btn-circle-play .fa-play').style.display = 'none'
-            $('.icon-position').style.opacity = '1'
-            audio.src = listSongs[currentIndex].src
-            loadCurrentSong(currentIndex)
-            timeEnd.innerHTML = listSongs[currentIndex].durationSong
-            showLoadingIcon()
-            setTimeout(() => {
-                displayTextWhenPlaySong()
-            }, 800)
-            displayTextWhenPauseSong()
-            audio.play()
-        }
-    } 
-}
-
 function prevSong() {
     if (isRandom) {
         playRandomSong()
@@ -356,16 +486,23 @@ function prevSong() {
         }, 800)
         displayTextWhenPauseSong()
         showLoadingIcon()
+        singerThumb.style.animation = 'rotate 4s linear infinite'
+        singerThumb.style.borderRadius = '50%'
+        singerThumb.style.transition = 'border-radius .3s ease-out'
     }
     else {
         if (currentIndex == 0) {
             currentIndex = listSongs.length - 1
             loadCurrentSong(currentIndex)
+            render()
             iconPlaying.style.display = 'block'
             $('.btn-circle-play .fa-play').style.display = 'none'
             $('.icon-position').style.opacity = '1'
             timeEnd.innerHTML = listSongs[currentIndex].durationSong
             showLoadingIcon()
+            singerThumb.style.animation = 'rotate 4s linear infinite'
+            singerThumb.style.borderRadius = '50%'
+            singerThumb.style.transition = 'border-radius .3s ease-out'
             setTimeout(() => {
                 displayTextWhenPlaySong()
             }, 800)
@@ -374,6 +511,7 @@ function prevSong() {
         }
         else {
             currentIndex--
+            render()
             iconPlaying.style.display = 'block'
             $('.btn-circle-play .fa-play').style.display = 'none'
             $('.icon-position').style.opacity = '1'
@@ -383,6 +521,9 @@ function prevSong() {
             loadCurrentSong(currentIndex)
             timeEnd.innerHTML = listSongs[currentIndex].durationSong
             showLoadingIcon()
+            singerThumb.style.animation = 'rotate 4s linear infinite'
+            singerThumb.style.borderRadius = '50%'
+            singerThumb.style.transition = 'border-radius .3s ease-out'
             setTimeout(() => {
                 displayTextWhenPlaySong()
             }, 800)
@@ -412,102 +553,74 @@ function handleShare(el) {
     el.querySelector('span').innerHTML = 'Góc nhạc'
 }
 function handleClickImage(index, el) {
-    stopAll()
-    audio.src = listSongs[index].src
-    el.parentElement.parentElement.parentElement.classList.add('active')
-    let node = el.nextElementSibling.nextElementSibling.lastElementChild.lastElementChild
-    node.querySelector('.fa-play').classList.toggle('hide')
-    node.querySelector('div').classList.toggle('bg-white')
+    isClick = true
+    saveIndex = index
+    render()
     loadCurrentSong(index)
-    if (node.querySelector('div').classList.contains('bg-white')) {
-        handleSongWhenImagePlay()
+    let menuNodeItem = el.parentElement.parentElement.parentElement.parentElement
+    let menuNode = $('.active')
+    if (menuNode !== null) {
+        menuNode.classList.remove('active')
+    }
+    menuNodeItem.classList.add('active')
+    audio.src = listSongs[index].src
+    playSong()
+}
+
+function nextSong() {
+    if (isRandom) {
+        playRandomSong()
+        timeEnd.innerHTML = listSongs[currentIndex].durationSong
+        iconPlaying.style.display = 'block'
+        $('.btn-circle-play .fa-play').style.display = 'none'
+        $('.icon-position').style.opacity = '1'
+        playSong()
+        setTimeout(() => {
+            displayTextWhenPauseSong()
+        }, 800)
+        displayTextWhenPlaySong()
+        showLoadingIcon()
+        singerThumb.style.animation = 'rotate 4s linear infinite'
+        singerThumb.style.borderRadius = '50%'
+        singerThumb.style.transition = 'border-radius .3s ease-out'
     }
     else {
-        handleSongWhenImagePause()
-    }
+        if (currentIndex == listSongs.length - 1) {
+            currentIndex = 0
+            render()
+            loadCurrentSong(currentIndex)
+            iconPlaying.style.display = 'block'
+            $('.btn-circle-play .fa-play').style.display = 'none'
+            $('.icon-position').style.opacity = '1'
+            timeEnd.innerHTML = listSongs[currentIndex].durationSong
+            showLoadingIcon()
+            singerThumb.style.animation = 'rotate 4s linear infinite'
+            singerThumb.style.borderRadius = '50%'
+            singerThumb.style.transition = 'border-radius .3s ease-out'
+            setTimeout(() => {
+                displayTextWhenPlaySong()
+            }, 800)
+            displayTextWhenPauseSong()
+            audio.play()
+        }
+        else {
+            currentIndex++
+            render()
+            iconPlaying.style.display = 'block'
+            $('.btn-circle-play .fa-play').style.display = 'none'
+            $('.icon-position').style.opacity = '1'
+            audio.src = listSongs[currentIndex].src
+            loadCurrentSong(currentIndex)
+            timeEnd.innerHTML = listSongs[currentIndex].durationSong
+            showLoadingIcon()
+            singerThumb.style.animation = 'rotate 4s linear infinite'
+            singerThumb.style.borderRadius = '50%'
+            singerThumb.style.transition = 'border-radius .3s ease-out'
+            setTimeout(() => {
+                displayTextWhenPlaySong()
+            }, 800)
+            displayTextWhenPauseSong()
+            audio.play()
+        }
+    } 
 }
-window.addEventListener('load', () => {
-    iconSpinner.style.display = 'block'
-    playIcon.style.display = 'none'
-    setTimeout(() => {
-        iconSpinner.style.display = 'none'
-        playIcon.style.display = 'block'
-    }, 1000);
-    const htmls = listSongs.map((songItem, index) => {
-        return `
-            <div class="song-item">
-                <div class="checkbox-wrap"></div>
-                <div class="media hide-right media-item">
-                    <div class="mdi-left mdi-wrap">
-                        <div class="song-pref">
-                            ${songItem.iconMusic}
-                        </div>
-                        <div class="song-thumb">
-                            <div onclick="handleClickImage(${index}, this)" class="overlay"></div>
-                            <figure>
-                                <img class="singer-img" src=${songItem.imagePath} alt="singer">
-                            </figure>
-                            <div class="action-container">
-                                <div class="zm-action">
-                                    <button>
-                                        ${songItem.iconPlay}
-                                        <div></div>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-info">
-                            <div class="name-song">${songItem.nameSong}</div>
-                            <div class="name-singer">
-                                <span>${songItem.singer}</span>
-                                <i class="fa-regular fa-star icon-star icon-grey"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mdi-content">
-                        <p class="text-grey">${songItem.text}</p>
-                    </div>
-                    <div class="mdi-right">
-                        <span class="text-grey">${songItem.durationSong}</span>
-                    </div>
-                </div>
-            </div>
-        `
-    }).join('')
-    songWrap.innerHTML = htmls;
-
-    let htmlList = listSingers.map((item) => {
-        return `
-            <div class="carousel-item">
-                <div class="thumbnail">
-                    <div class="card-image">
-                        <div class="thumb">
-                            <figure class="image1">
-                                <img height="220" src=${item.thumb} alt="anh ca si">
-                                <div class="icon-position">
-                                    <button class="btn btn-circle-lay">
-                                        <i class="fa-solid fa-repeat icon-white"></i>
-                                    </button>
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div class="artists">
-                        <div class="name-singer">
-                            <span>${item.nameSinger}</span>
-                            <i class="fa-solid fa-star icon-star icon-grey"></i>
-                        </div>
-                        <span class="like">${item.subcribers}</span>
-                        <button class="btn-play btn-share" onclick="handleShare(this)">
-                            <i class="fa-solid fa-user-plus"></i>
-                            <span>Quan tâm</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `
-    }).join('')
-    carouselList.innerHTML = htmlList
-})
