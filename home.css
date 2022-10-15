@@ -485,6 +485,15 @@ img, span {
     }
 }
 
+@keyframes rotate1{
+    from {
+        transform: rotate(-360deg)
+    }
+    to {
+        transform: rotate(0);
+    }
+}
+
 .media {
     display: flex;
     padding: 10px;

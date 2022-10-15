@@ -458,9 +458,11 @@ function handleSongWhenImagePause() {
     playIcon.style.display = 'block'
     iconPlaying.style.display = 'none'
     $('.btn-circle-play .fa-play').style.display = 'block'
-    singerThumb.style.animation = 'unset'
-    singerThumb.style.borderRadius = '5px'
-    singerThumb.style.transition = 'border-radius .3s ease-in'
+    singerThumb.style.animation = 'rotate1 .5s'
+    setTimeout(() => {
+        singerThumb.style.borderRadius = '5px'
+        singerThumb.style.transition = 'border-radius .2s'
+    },700)
     displayTextWhenPauseSong()
 }
 
