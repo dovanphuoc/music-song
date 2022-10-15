@@ -461,15 +461,19 @@ img, span {
     transition: .2s;
 }
 
-/* .thumbnail .card-image .thumb .image:hover {
-    transform: scale(1.08);
+/* .thumbnail .card-image .thumb .image #singer-thumb {
+    transition: .5s ease-in-out;
+}
+
+.thumbnail .card-image .thumb .image:hover #singer-thumb{
+    transform: scale(1.05);
 } */
 
 .thumbnail .card-image .thumb .image1:hover {
     transform: scale(1) !important;
 }
 
-.card-image .thumb .image img {
+.card-image .thumb .image #singer-thumb {
     width: 280px;
     height: 280px;
     border-radius: 5px;

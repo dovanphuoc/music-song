@@ -167,51 +167,6 @@ const listSingers = [
     },
 ]
 
-function render() {
-    const htmls = listSongs.map((songItem, index) => {
-        return `
-            <div class="song-item ${currentIndex === index ? 'active' : ''}">
-                <div class="checkbox-wrap"></div>
-                <div class="media hide-right media-item">
-                    <div class="mdi-left mdi-wrap">
-                        <div class="song-pref">
-                            ${songItem.iconMusic}
-                        </div>
-                        <div class="song-thumb">
-                            <div onclick="handleClickImage(${index}, this)" class="activeSong ${currentIndex === index ? 'overlay-bg' : ''}"></div>
-                            <figure>
-                                <img class="singer-img" src=${songItem.imagePath} alt="singer">
-                            </figure>
-                            <div class="action-container">
-                                <div class="zm-action">
-                                    <button>
-                                        ${songItem.hidePlayIcon}
-                                        <div></div>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-info">
-                            <div class="name-song">${songItem.nameSong}</div>
-                            <div class="name-singer">
-                                <span>${songItem.singer}</span>
-                                <i class="fa-regular fa-star icon-star icon-grey"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mdi-content">
-                        <p class="text-grey">${songItem.text}</p>
-                    </div>
-                    <div class="mdi-right">
-                        <span class="text-grey">${songItem.durationSong}</span>
-                    </div>
-                </div>
-            </div>
-        `
-    }).join('')
-    songWrap.innerHTML = htmls;
-}
-
 window.addEventListener('load', () => {
     iconSpinner.style.display = 'block'
     playIcon.style.display = 'none'
@@ -219,7 +174,6 @@ window.addEventListener('load', () => {
         iconSpinner.style.display = 'none'
         playIcon.style.display = 'block'
     }, 1000);
-    
     render()
     let htmlList = listSingers.map((item) => {
         return `
@@ -287,6 +241,9 @@ const songInfoWrap = $('.song-info-wrapper')
 const carouselList = $('.carousel-list')
 const btnHeart = $('.btn-heart')
 const singerThumb = $('#singer-thumb')
+const scrollBar = $('#scroll-bar')
+const thumbVertical = $('#thumb-vertical')
+
 let isClick = false
 let saveIndex
 let currentIndex = 0 
@@ -322,6 +279,20 @@ figureImage.addEventListener('mouseleave', handleLeaveSong)
 figureImage.addEventListener('mouseover', handleMoveSong)
 btnPlaySong.addEventListener('click', handleSong)
 btnHeart.addEventListener('click', addColor)
+
+function handleClickImage(index, el) {
+    isClick = true
+    saveIndex = index
+    loadCurrentSong(index)
+    let menuNodeItem = el.parentElement.parentElement.parentElement.parentElement
+    let menuNode = $('.active')
+    if (menuNode !== null) {
+        menuNode.classList.remove('active')
+    }
+    menuNodeItem.classList.add('active')
+    audio.src = listSongs[index].src
+    playSong()
+}
 
 function addColor() {
     btnHeart.querySelector('.fa-heart').classList.toggle('addColor')
@@ -512,6 +483,13 @@ function prevSong() {
             audio.play()
         }
         else {
+            if (isClick) {
+                currentIndex = saveIndex
+                if (currentIndex == 0) {
+                    currentIndex = listSongs.length
+                }
+                isClick = false
+            }
             currentIndex--
             render()
             iconPlaying.style.display = 'block'
@@ -552,21 +530,9 @@ function playRandomSong() {
 function handleShare(el) {
     el.classList.add('active')
     el.querySelector('i').setAttribute('class', 'fa-solid fa-shuffle')
-    el.querySelector('span').innerHTML = 'Góc nhạc'
-}
-function handleClickImage(index, el) {
-    isClick = true
-    saveIndex = index
-    render()
-    loadCurrentSong(index)
-    let menuNodeItem = el.parentElement.parentElement.parentElement.parentElement
-    let menuNode = $('.active')
-    if (menuNode !== null) {
-        menuNode.classList.remove('active')
-    }
-    menuNodeItem.classList.add('active')
-    audio.src = listSongs[index].src
-    playSong()
+    JSON.stringify(localStorage.setItem('saveText', 'Góc nhạc'))
+    let getText = localStorage.getItem('saveText')
+    el.querySelector('span').innerHTML = getText
 }
 
 function nextSong() {
@@ -606,6 +572,13 @@ function nextSong() {
             audio.play()
         }
         else {
+            if (isClick) {
+                currentIndex = saveIndex
+                if (currentIndex == listSongs.length - 1) {
+                    currentIndex = -1
+                }
+                isClick = false
+            }
             currentIndex++
             render()
             iconPlaying.style.display = 'block'
@@ -625,4 +598,49 @@ function nextSong() {
             audio.play()
         }
     } 
+}
+
+function render() {
+    const htmls = listSongs.map((songItem, index) => {
+        return `
+            <div class="song-item ${currentIndex === index ? 'active' : ''}">
+                <div class="checkbox-wrap"></div>
+                <div class="media hide-right media-item">
+                    <div class="mdi-left mdi-wrap">
+                        <div class="song-pref">
+                            ${songItem.iconMusic}
+                        </div>
+                        <div class="song-thumb">
+                            <div onclick="handleClickImage(${index}, this)" class="activeSong ${currentIndex === index ? 'overlay-bg' : ''}"></div>
+                            <figure>
+                                <img class="singer-img" src=${songItem.imagePath} alt="singer">
+                            </figure>
+                            <div class="action-container">
+                                <div class="zm-action">
+                                    <button>
+                                        ${songItem.hidePlayIcon}
+                                        <div></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="name-song">${songItem.nameSong}</div>
+                            <div class="name-singer">
+                                <span>${songItem.singer}</span>
+                                <i class="fa-regular fa-star icon-star icon-grey"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdi-content">
+                        <p class="text-grey">${songItem.text}</p>
+                    </div>
+                    <div class="mdi-right">
+                        <span class="text-grey">${songItem.durationSong}</span>
+                    </div>
+                </div>
+            </div>
+        `
+    }).join('')
+    songWrap.innerHTML = htmls;
 }
