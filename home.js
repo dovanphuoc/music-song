@@ -243,6 +243,7 @@ const btnHeart = $('.btn-heart')
 const singerThumb = $('#singer-thumb')
 const scrollBar = $('#scroll-bar')
 const thumbVertical = $('#thumb-vertical')
+const btnChangeThumb = $('#btnChangeThumb')
 
 let isClick = false
 let saveIndex
@@ -279,6 +280,11 @@ figureImage.addEventListener('mouseleave', handleLeaveSong)
 figureImage.addEventListener('mouseover', handleMoveSong)
 btnPlaySong.addEventListener('click', handleSong)
 btnHeart.addEventListener('click', addColor)
+btnChangeThumb.addEventListener('click', changeThumb)
+
+function changeThumb() {
+    
+}
 
 function handleClickImage(index, el) {
     isClick = true
@@ -600,10 +606,23 @@ function nextSong() {
     } 
 }
 
+function handleClickActiveSong(index, el) {
+    isClick = true
+    saveIndex = index
+    loadCurrentSong(index)
+    let menuNode = $('.active')
+    if (menuNode !== null) {
+        menuNode.classList.remove('active')
+    }
+    el.classList.add('active')
+    audio.src = listSongs[index].src
+    playSong()
+}
+
 function render() {
     const htmls = listSongs.map((songItem, index) => {
         return `
-            <div class="song-item ${currentIndex === index ? 'active' : ''}">
+            <div ondblclick="handleClickActiveSong(${index}, this)" class="song-item ${currentIndex === index ? 'active' : ''}">
                 <div class="checkbox-wrap"></div>
                 <div class="media hide-right media-item">
                     <div class="mdi-left mdi-wrap">
