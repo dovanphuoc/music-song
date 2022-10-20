@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://static-zmp3.zmdcdn.me/skins/zmp3-v5.2/images/icon_zing_mp3_60.png">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <meta property="og:description" content="Dịch vụ nhạc số với hàng triệu bài hát và MV có bản quyền chất lượng cao, giúp bạn nghe nhạc, tải nhạc, upload và đồng bộ kho nhạc của tôi trên nhiều thiết bị.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-9/css/all.min.css" integrity="sha512-X8jR8oYnEmXhGB43u+qxt0mQezR37NUxHhtukvD4bzeWDthOz0mvNOYOzPCMZ7VB0mG607nrkd+kakmSmbffyQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./khampha.css">
+    <title>Zing MP3 | Nghe tải nhạc chất lượng cao trên desktop, mobile và TV</title>
+</head>
+<body>
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-img">
+                <img class="logo" width="120" height="40" src="./images/logo.svg" alt="">
+            </div>
+            <div class="sidebar-main">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="#" class="menu-item">
+                            <i class="fa-solid fa-music icon icon-pro"></i>
+                            <span class="icon-pro">Cá Nhân</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/music-song/khampha.html" class="menu-item">
+                            <i class="fa-solid fa-house icon icon-pro"></i>
+                            <span class="icon-pro">Khám Phá</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item">
+                            <i class="fa-brands fa-twitter icon icon-pro"></i>
+                            <span class="icon-pro">#zingchart</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item">
+                            <i class="fa-brands fa-tiktok icon icon-pro"></i>
+                            <span class="icon-pro">Radio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item">
+                            <i class="fa-solid fa-star icon icon-pro"></i>
+                            <span class="icon-pro">Theo dõi</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-divide"></div>
+            <div class="genre">
+                <div class="sidebar-scrollbar sidebar-menu">
+                    <div class="nav-genre">
+                        <ul class="genre-menu">
+                            <li>
+                                <a href="#" class="menu-item">
+                                    <i class="fa-solid fa-location-dot icon icon-pro"></i>
+                                    <span class="icon-pro">Cá Nhân</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="menu-item">
+                                    <i class="fa-brands fa-discord icon icon-pro"></i>
+                                    <span class="icon-pro">Thể Loại</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="menu-item">
+                                    <i class="fa-brands fa-twitter icon icon-pro"></i>
+                                    <span class="icon-pro">Top 100</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="menu-item">
+                                    <i class="fa-solid fa-cart-shopping icon icon-pro"></i>
+                                    <span class="icon-pro">MV</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="vip-banner">
+                        <div class="text">Nghe nhạc không quảng cáo cùng kho nhạc VIP</div>
+                        <a href="#">Nâng cấp vip</a>
+                    </div>
+                    <div class="nav-music">
+                        <div class="main-title">
+                            <span>Thư viện</span>
+                        </div>
+                        <ul class="sidebar-menu">
+                            <li>
+                                <a href="#" class="menu-item">
+                                    <i class="fa-solid fa-music icon icon-pro"></i>
+                                    <span>Bài hát</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="menu-item">
+                                    <i class="fa-solid fa-music icon icon-pro"></i>
+                                    <span>Playlist</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="menu-item">
+                                    <i class="fa-solid fa-music icon icon-pro"></i>
+                                    <span>Gần đây</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="track-horizontal">
+                    <div></div>
+                </div>
+                <div class="track-vertical">
+                    <div class="thumb-vertical"></div>
+                </div>
+            </div>
+            <div class="add-playList"></div>
+        </aside>
+        <div class="main-content">
+            <div class="header">
+                <div class="level">
+                    <div class="level-left">
+                        <button class="btn">
+                            <i class="fas fa-long-arrow-left icon-grey"></i>
+                        </button>
+                        <button class="btn">
+                            <i class="fas fa-long-arrow-right icon-grey"></i>
+                        </button>
+                        <form class="search">
+                            <div class="search-container is-collapse">
+                                <button>
+                                    <i class="fa-solid fa-magnifying-glass icon-search"></i>
+                                </button>
+                                <div class="input-wrapper">
+                                    <input class="form-control" type="text" placeholder="Tìm kiếm bài hát, nghệ sĩ, lời bài hát...">
+                                </div>
+                            </div>  
+                        </form>
+                    </div>
+                    <div class="level-right">
+                        <div class="item">
+                            <button class="btn btn-icon" id="btnChangeThumb">
+                                <i>
+                                    <svg width="20" height="20" viewBox="0 0 20 20"><defs><linearGradient id="j32lhg93hd" x1="62.206%" x2="18.689%" y1="70.45%" y2="39.245%"><stop offset="0%" stop-color="#F81212"></stop><stop offset="100%" stop-color="red"></stop></linearGradient><linearGradient id="hjoavsus6g" x1="50%" x2="11.419%" y1="23.598%" y2="71.417%"><stop offset="0%" stop-color="#00F"></stop><stop offset="100%" stop-color="#0031FF"></stop></linearGradient><linearGradient id="la1y5u3dvi" x1="65.655%" x2="25.873%" y1="18.825%" y2="56.944%"><stop offset="0%" stop-color="#FFA600"></stop><stop offset="100%" stop-color="orange"></stop></linearGradient><linearGradient id="2dsmrlvdik" x1="24.964%" x2="63.407%" y1="8.849%" y2="55.625%"><stop offset="0%" stop-color="#13EFEC"></stop><stop offset="100%" stop-color="#00E8DF"></stop></linearGradient><filter id="4a7imk8mze" width="230%" height="230%" x="-65%" y="-65%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur></filter><filter id="301mo6jeah" width="312.7%" height="312.7%" x="-106.4%" y="-106.4%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur></filter><filter id="b2zvzgq7fj" width="295%" height="295%" x="-97.5%" y="-97.5%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur></filter><filter id="a1wq161tvl" width="256%" height="256%" x="-78%" y="-78%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur></filter><path id="qtpqrj1oda" d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z"></path><path id="jggzvnjgfc" d="M0 0H20V20H0z"></path><path id="2eiwxjmc7m" d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z"></path></defs><g fill="none" fill-rule="evenodd" transform="translate(2 3)"><mask id="tinejqaasb" fill="#fff"><use xlink:href="#qtpqrj1oda"></use></mask><use fill="#FFF" fill-opacity="0" xlink:href="#qtpqrj1oda"></use><g mask="url(#tinejqaasb)"><g transform="translate(-2 -3)"><mask id="uf3ckvfvpf" fill="#fff"><use xlink:href="#jggzvnjgfc"></use></mask><use fill="#D8D8D8" xlink:href="#jggzvnjgfc"></use><circle cx="8.9" cy="6.8" r="9" fill="url(#j32lhg93hd)" filter="url(#4a7imk8mze)" mask="url(#uf3ckvfvpf)"></circle><circle cx="9.3" cy="13.7" r="5.5" fill="url(#hjoavsus6g)" filter="url(#301mo6jeah)" mask="url(#uf3ckvfvpf)"></circle><circle cx="15.9" cy="6.9" r="6" fill="url(#la1y5u3dvi)" filter="url(#b2zvzgq7fj)" mask="url(#uf3ckvfvpf)"></circle><circle cx="16.4" cy="17.7" r="7.5" fill="url(#2dsmrlvdik)" filter="url(#a1wq161tvl)" mask="url(#uf3ckvfvpf)"></circle></g></g><use fill="#FFF" fill-opacity="0.05" xlink:href="#2eiwxjmc7m"></use></g></svg>
+                                </i>
+                            </button>
+                        </div>
+                        <div class="item">
+                            <button class="btn btn-icon">
+                                <i class="fa-solid fa-star icon-grey"></i>
+                            </button>
+                        </div>
+                        <div class="item">
+                            <button class="btn btn-icon">
+                                <i class="fa-solid fa-star icon-grey"></i>
+                            </button>
+                        </div>
+                        <div class="item">
+                            <button class="btn btn-icon">
+                                <i class="fa-solid fa-star icon-grey"></i>
+                            </button>
+                        </div>
+                        <div class="item">
+                            <button class="btn btn-icon">
+                                <i class="fa-solid fa-star icon-grey"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="main-page">
+                <div style="position: relative; overflow: hidden; width: 100%; height: 100%;">
+                    <div class="zm-section">
+                        <div class="container">
+                            <div class="container">
+                                <div class="gallery swiper mySwiper">
+                                    <div class="gallery-container swiper-wrapper">
+                                        <div class=" swiper-slide">
+                                            <div class="gallery-item gallery-first">
+                                                <div class="zm-card">
+                                                    <a href="#">
+                                                        <div class="zm-card-image">
+                                                            <figure>
+                                                                <div class="slide slide1"></div>
+                                                            </figure>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="gallery-item gallery-previous">
+                                                <div class="zm-card">
+                                                    <a href="#">
+                                                        <div class="zm-card-image">
+                                                            <figure>
+                                                                <div class="slide slide2"></div>
+                                                            </figure>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="gallery-item gallery-selected">
+                                                <div class="zm-card">
+                                                    <a href="#">
+                                                        <div class="zm-card-image">
+                                                            <figure>
+                                                                <div class="slide slide4"></div>
+                                                            </figure>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="gallery-item gallery-next">
+                                                <div class="zm-card">
+                                                    <a href="#">
+                                                        <div class="zm-card-image">
+                                                            <figure>
+                                                                <div class="slide slide5"></div>
+                                                            </figure>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="gallery-item gallery-last">
+                                                <div class="zm-card">
+                                                    <a href="#">
+                                                        <div class="zm-card-image">
+                                                            <figure>
+                                                                <div class="slide slide6"></div>
+                                                            </figure>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="gallery-item gallery-add">
+                                                <div class="zm-card">
+                                                    <a href="#">
+                                                        <div class="zm-card-image">
+                                                            <figure>
+                                                                <div class="slide slide3"></div>
+                                                            </figure>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gallery">
+                                    <div class="gallery-container">
+                                        <div class="zm-gallery-prev">
+                                            <button class="btn btn-prev">
+                                                <i class="icon-white fa-solid fa-arrow-left"></i>
+                                            </button>
+                                        </div>
+                                        <div class="gallery-item gallery-first">
+                                            <div class="zm-card">
+                                                <a href="#">
+                                                    <div class="zm-card-image">
+                                                        <figure>
+                                                            <div class="slide slide1"></div>
+                                                        </figure>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-item gallery-previous">
+                                            <div class="zm-card">
+                                                <a href="#">
+                                                    <div class="zm-card-image">
+                                                        <figure>
+                                                            <div class="slide slide2"></div>
+                                                        </figure>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-item gallery-selected">
+                                            <div class="zm-card">
+                                                <a href="#">
+                                                    <div class="zm-card-image">
+                                                        <figure>
+                                                            <div class="slide slide4"></div>
+                                                        </figure>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-item gallery-next">
+                                            <div class="zm-card">
+                                                <a href="#">
+                                                    <div class="zm-card-image">
+                                                        <figure>
+                                                            <div class="slide slide5"></div>
+                                                        </figure>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-item gallery-last">
+                                            <div class="zm-card">
+                                                <a href="#">
+                                                    <div class="zm-card-image">
+                                                        <figure>
+                                                            <div class="slide slide6"></div>
+                                                        </figure>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-item gallery-add">
+                                            <div class="zm-card">
+                                                <a href="#">
+                                                    <div class="zm-card-image">
+                                                        <figure>
+                                                            <div class="slide slide3"></div>
+                                                        </figure>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="zm-gallery-last">
+                                            <button class="btn btn-next">
+                                                <i class="icon-white fa-solid fa-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="./khampha.js"></script>
+<script src="https://kit.fontawesome.com/496e209a59.js" crossorigin="anonymous"></script>
+</html>

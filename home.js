@@ -244,6 +244,8 @@ const singerThumb = $('#singer-thumb')
 const scrollBar = $('#scroll-bar')
 const thumbVertical = $('#thumb-vertical')
 const btnChangeThumb = $('#btnChangeThumb')
+const modalOverlay = $('.modal-overlay')
+const btnClose = $('.modal-content .btn-close')
 
 let isClick = false
 let saveIndex
@@ -280,10 +282,15 @@ figureImage.addEventListener('mouseleave', handleLeaveSong)
 figureImage.addEventListener('mouseover', handleMoveSong)
 btnPlaySong.addEventListener('click', handleSong)
 btnHeart.addEventListener('click', addColor)
-btnChangeThumb.addEventListener('click', changeThumb)
+btnChangeThumb.addEventListener('click', openModal)
+btnClose.addEventListener('click', closeModal)
 
-function changeThumb() {
-    
+function closeModal() {
+    modalOverlay.style.visibility = 'hidden'
+}
+
+function openModal() {
+    modalOverlay.style.visibility = 'visible'
 }
 
 function handleClickImage(index, el) {

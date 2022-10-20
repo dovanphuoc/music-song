@@ -13,10 +13,8 @@ body {
     font-family: sans-serif;
 }
 
-body::-webkit-scrollbar {
-    width: 0.6rem;
-    border-radius: 5px;
-    background: transparent;
+.modal-content .container::-webkit-scrollbar {
+    width: 6px;
 }
 
 body::-webkit-scrollbar-track {
@@ -24,10 +22,9 @@ body::-webkit-scrollbar-track {
     background: #fff;
 }
 
-body::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: darkgrey;
-    outline: none
+.modal-content .container::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    box-shadow: inset 0 0 6px rgb(0 0 0 / 50%);
 }
 
 ul {
@@ -60,6 +57,17 @@ img, span {
 
 /* END RESET CSS */
 
+.wrapper {
+    /* background-image: url('./images/jennie.jpg');
+    position: absolute;
+    z-index: 100;
+    height: calc(100vh - 90px);
+    background-size: 1920px auto;
+    display: flex;
+    width: 100%;
+    min-width: 768px;
+    background-color: #061d50; */
+}
 
 /* SIDEBAR */
 .sidebar {
@@ -153,7 +161,6 @@ img, span {
 .sidebar-scrollbar {
     position: absolute;
     inset: 0px;
-    /* overflow: hidden scroll; */
     margin-right: -6px;
     margin-bottom: 0px;
     margin-top: 10px;
@@ -1117,6 +1124,7 @@ img, span {
     display: flex;
     justify-content: center;
     align-items: center;
+    visibility: hidden;
 }
 
 .portal-modal.modal-overlay {
@@ -1240,9 +1248,163 @@ img, span {
     background: url('./images/dynamic-pink.jpg') no-repeat 50%;
 }
 
+.card6 {
+    background: url('./images/xone-thumbn.jpg') no-repeat 50%;
+}
+
+.card7 {
+    background: url('./images/zma.jpg') no-repeat 50%;
+}
+
+.card8 {
+    background: url('./images/eiffel.jpg') no-repeat 50%;
+}
+
+.card9 {
+    background: url('./images/jack.jpg') no-repeat 50%;
+}
+
+.card10 {
+    background: url('./images/iu.jpg') no-repeat 50%;
+}
+
+.card11 {
+    background: url('./images/ji-chang-wook.jpg') no-repeat 50%;
+}
+
+.card12 {
+    background: url('./images/lisa.jpg') no-repeat 50%;
+}
+
+.card13 {
+    background: url('./images/jennie.jpg') no-repeat 50%;
+}
+
+.card14 {
+    background: url('./images/jisoo.jpg') no-repeat 50%;
+}
+
+.card15 {
+    background: url('./images/rose.jpg') no-repeat 50%;
+}
+
+.card16 {
+    background: url('./images/dark.jpg') no-repeat 50%;
+}
+
+.card17 {
+    background: url('./images/purple.jpg') no-repeat 50%;
+}
+
+.card18 {
+    background: url('./images/blue.jpg') no-repeat 50%;
+}
+
+.card19 {
+    background: url('./images/blue-light.jpg') no-repeat 50%;
+}
+
+.card20 {
+    background: url('./images/green.jpg') no-repeat 50%;
+}
+
+.card21 {
+    background: url('./images/brown.jpg') no-repeat 50%;
+}
+
+.card22 {
+    background: url('./images/purple.jpg') no-repeat 50%;
+}
+
+.card23 {
+    background: url('./images/red.jpg') no-repeat 50%;
+}
+
+.column7 {
+    width: 125px;
+}
+
 .card .card-thumb {
     padding-top: 67%;
     width: 125px;
     height: 83px;
+    background-size: cover;
 }
+
+.card .card-img .overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    transition: .2s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.card .card-img:hover .overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+.card .card-img .card-inside {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px 0;
+    transition: .2s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.card .card-img:hover .card-inside {
+    visibility: visible;
+    opacity: 1;
+}
+
+.card .card-img .card-inside .btn {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.card .card-img .card-inside .btn:hover {
+    filter: brightness(.9);
+}
+
+.card .card-img .card-inside .btn.btn-grey {
+    border-color: #9b4de0;
+    background-color: #9b4de0;
+}
+
+.card .card-img .card-inside .btn.btn-transparent {
+    background-color: rgba(0,0,0,.3);
+    border-color: hsla(0,0%,100%,.5);
+    margin-top: 6px;
+}
+
+.column .card .card-content .title {
+    font-size: 1.2rem !important;
+}
+
+.modal-content .btn-close .icon {
+    color: #fff;
+    font-size: 2rem;
+} 
 /* END MODAL */
+
+
+/* player queue */
+.player-queue {
+    position: fixed;
+    right: 0;
+    height: 100%;
+    background-color: red;
+}
+/* end player queue */
