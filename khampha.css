@@ -28,8 +28,8 @@
 }
 
 .slide {
-    /* width: 278px; */
-    padding-top: 56%;
+    padding-top: 54%;
+    border-radius: 8px;
 }
 
 .slide1 {
@@ -62,8 +62,12 @@
     background-size: cover;
 }
 
+.owl-nav {
+    margin: 0 !important;
+}
+
 .owl-next {
-    right: 10px;
+    right: 14px;
 }
 
 .owl-prev {
