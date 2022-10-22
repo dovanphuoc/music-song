@@ -429,7 +429,7 @@ function handleSongWhenImagePlay() {
     iconPlaying.style.display = 'block'
     $('.btn-circle-play .fa-play').style.display = 'none'
     $('.icon-position').style.opacity = '1'
-    singerThumb.style.animation = 'rotate 4s linear infinite'
+    singerThumb.style.animation = 'rotate 6s linear infinite'
     singerThumb.style.borderRadius = '50%'
     singerThumb.style.transition = 'border-radius .3s ease-out'
     displayTextWhenPlaySong()
