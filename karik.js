@@ -591,6 +591,7 @@ function handleClickActiveSong(index, el) {
     isClick = true
     saveIndex = index
     loadCurrentSong(index)
+    timeEnd.innerHTML = listSongs[index].durationSong
     let menuNode = $('.active')
     if (menuNode !== null) {
         menuNode.classList.remove('active')
