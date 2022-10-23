@@ -1411,3 +1411,27 @@ img, span {
     background-color: red;
 }
 /* end player queue */
+
+/* Notification */
+.notifycationAddSong, .notifycationRemoveSong {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1090;
+    top: 20px;
+    right: 0;
+    width: 250px;
+    padding: 0 10px;
+    border-radius: 3px;
+    transform: translateX(100%);
+    background: #173b45;
+    height: 36px;
+    transition: .3s;
+}
+
+.notify-textAddSong, .notify-textRemoveSong {
+    color: #fff;
+    font-size: 1.2rem;
+}
+/* end Notification */

@@ -246,6 +246,13 @@ const thumbVertical = $('#thumb-vertical')
 const btnChangeThumb = $('#btnChangeThumb')
 const modalOverlay = $('.modal-overlay')
 const btnClose = $('.modal-content .btn-close')
+const notifycationAddSong = $('.notifycationAddSong')
+const notifyCationRemoveSong = $('.notifycationRemoveSong')
+const notifyAddSong = $('.notify-textAddSong')
+const notifyRemoveSong = $('.notify-textRemoveSong')
+const hoverCircle = $('#hoverCircle')
+const closeAddSong = notifycationAddSong.querySelector('.btn-close')
+const closeRemoveSong = notifyCationRemoveSong.querySelector('.btn-close')
 
 let isClick = false
 let saveIndex
@@ -254,6 +261,7 @@ const audio = document.createElement('audio')
 let isRandom = false
 let isRepeat = false
 let isPlaying = false
+let isAddSong = false
 
 function loadCurrentSong(currentIndex) {
     thumb.src = listSongs[currentIndex].imagePath
@@ -284,7 +292,19 @@ btnPlaySong.addEventListener('click', handleSong)
 btnHeart.addEventListener('click', addColor)
 btnChangeThumb.addEventListener('click', openModal)
 btnClose.addEventListener('click', closeModal)
+hoverCircle.addEventListener('click', handleLike)
+closeAddSong.addEventListener('click', handleShowNotifyAddSong)
+closeRemoveSong.addEventListener('click', handleShowNotifyRemoveSong)
 
+function handleShowNotifyAddSong() {
+    notifycationAddSong.style.transform = 'translate(100%)'
+    notifycationAddSong.style.right = '0'
+}
+
+function handleShowNotifyRemoveSong() {
+    notifyCationRemoveSong.style.transform = 'translate(100%)'
+    notifyCationRemoveSong.style.right = '0'
+}
 function closeModal() {
     modalOverlay.style.visibility = 'hidden'
 }
@@ -308,7 +328,49 @@ function handleClickImage(index, el) {
 }
 
 function addColor() {
+    isAddSong = !isAddSong
     btnHeart.querySelector('.fa-heart').classList.toggle('addColor')
+    if (isAddSong === true) {
+        notifycationAddSong.style.transform = 'translateX(20px)'
+        notifycationAddSong.style.right = '30px'
+        notifyAddSong.innerHTML = "Đã Thêm Bài Hát Vào Thư Viện"
+        setTimeout(() => {
+            notifycationAddSong.style.transform = 'translate(100%)'
+            notifycationAddSong.style.right = '0'
+        }, 3000)
+    }
+    else {
+        notifyCationRemoveSong.style.transform = 'translate(20px)'
+        notifyCationRemoveSong.style.right = '30px'
+        notifyRemoveSong.innerHTML = "Đã Xóa Bài Hát Khỏi Thư Viện"
+        setTimeout(() => {
+            notifyCationRemoveSong.style.transform = 'translate(100%)'
+            notifyCationRemoveSong.style.right = '0'
+        }, 3000)
+    }
+}
+
+function handleLike() {
+    isAddSong = !isAddSong
+    hoverCircle.querySelector('.fa-heart').classList.toggle('addColor')
+    if (isAddSong === true) {
+        notifycationAddSong.style.transform = 'translateX(20px)'
+        notifycationAddSong.style.right = '30px'
+        notifyAddSong.innerHTML = "Đã Thêm Bài Hát Vào Thư Viện"
+        setTimeout(() => {
+            notifycationAddSong.style.transform = 'translate(100%)'
+            notifycationAddSong.style.right = '0'
+        }, 3000)
+    }
+    else {
+        notifyCationRemoveSong.style.transform = 'translate(20px)'
+        notifyCationRemoveSong.style.right = '30px'
+        notifyRemoveSong.innerHTML = "Đã Xóa Bài Hát Khỏi Thư Viện"
+        setTimeout(() => {
+            notifyCationRemoveSong.style.transform = 'translate(100%)'
+            notifyCationRemoveSong.style.right = '0'
+        }, 3000)
+    }
 }
 
 function handleSong() {

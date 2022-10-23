@@ -283,6 +283,7 @@ function handleClickImage(index, el) {
 
 function addColor() {
     btnHeart.querySelector('.fa-heart').classList.toggle('addColor')
+    
 }
 
 function handleSong() {
