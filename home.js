@@ -262,6 +262,7 @@ let isRandom = false
 let isRepeat = false
 let isPlaying = false
 let isAddSong = false
+let isAddColor = false
 
 function loadCurrentSong(currentIndex) {
     thumb.src = listSongs[currentIndex].imagePath
@@ -351,9 +352,9 @@ function addColor() {
 }
 
 function handleLike() {
-    isAddSong = !isAddSong
+    isAddColor = !isAddColor
     hoverCircle.querySelector('.fa-heart').classList.toggle('addColor')
-    if (isAddSong === true) {
+    if (isAddColor === true) {
         notifycationAddSong.style.transform = 'translateX(20px)'
         notifycationAddSong.style.right = '30px'
         notifyAddSong.innerHTML = "Đã Thêm Bài Hát Vào Thư Viện"
