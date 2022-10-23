@@ -621,6 +621,7 @@ function handleClickActiveSong(index, el) {
     if (menuNode !== null) {
         menuNode.classList.remove('active')
     }
+    timeEnd.innerHTML = listSongs[index].durationSong
     el.classList.add('active')
     audio.src = listSongs[index].src
     playSong()
